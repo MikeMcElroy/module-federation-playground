@@ -1,7 +1,8 @@
+import { Configuration } from "webpack";
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = {
+const config: Configuration = {
   mode: "development",
   devServer: {
     port: 3000,
@@ -52,3 +53,5 @@ module.exports = {
     }),
   ],
 };
+
+export default config;

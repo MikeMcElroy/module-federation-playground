@@ -1,10 +1,11 @@
+import { Configuration } from "webpack";
 const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
-module.exports = {
+const config: Configuration = {
   mode: "development",
   devServer: {
-    port: 3001,
+    port: 3003,
   },
   resolve: {
     extensions: [".ts", ".tsx", ".js", ".jsx"],
@@ -39,7 +40,7 @@ module.exports = {
   },
   plugins: [
     new ModuleFederationPlugin({
-      name: "world",
+      name: "universe",
       filename: "remoteEntry.js",
       exposes: {
         "./App": "./src/App",
@@ -54,3 +55,5 @@ module.exports = {
     }),
   ],
 };
+
+export default config;
