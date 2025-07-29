@@ -21,7 +21,7 @@ const config: Configuration = {
             options: {
               presets: [
                 "@babel/preset-env",
-                "@babel/preset-react",
+                ["@babel/preset-react", { "runtime": "automatic" }],
                 "@babel/preset-typescript",
               ],
             },
@@ -34,7 +34,7 @@ const config: Configuration = {
         loader: "babel-loader",
         exclude: /node_modules/,
         options: {
-          presets: ["@babel/preset-react", "@babel/preset-env"],
+          presets: [["@babel/preset-react", { "runtime": "automatic" }], "@babel/preset-env"],
         },
       },
     ],

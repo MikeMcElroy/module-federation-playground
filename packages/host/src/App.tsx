@@ -1,12 +1,12 @@
-import React, { Suspense } from "react";
+import { Suspense, lazy } from "react";
 import { BrowserRouter as Router, Routes, Route, Link, Navigate } from "react-router-dom";
 
 // Lazy load microfrontends
-const WorldApp = React.lazy(() => import("world/App"));
-const SolarSystemApp = React.lazy(() => import("solarSystem/App"));
-const UniverseApp = React.lazy(() => import("universe/App"));
+const WorldApp = lazy(() => import("world/App"));
+const SolarSystemApp = lazy(() => import("solarSystem/App"));
+const UniverseApp = lazy(() => import("universe/App"));
 
-const LoadingSpinner: React.FC = () => (
+const LoadingSpinner = () => (
   <div style={{
     display: 'flex',
     justifyContent: 'center',
@@ -19,7 +19,7 @@ const LoadingSpinner: React.FC = () => (
   </div>
 );
 
-const NavigationBar: React.FC = () => (
+const NavigationBar = () => (
   <nav style={{
     background: 'rgba(255, 255, 255, 0.1)',
     padding: '1rem',
@@ -82,7 +82,7 @@ const NavigationBar: React.FC = () => (
   </nav>
 );
 
-const Home: React.FC = () => (
+const Home= () => (
   <div style={{
     textAlign: 'center',
     color: 'white',
@@ -103,7 +103,7 @@ const Home: React.FC = () => (
   </div>
 );
 
-const App: React.FC = () => {
+const App = () => {
   return (
     <Router>
       <div style={{ minHeight: '100vh' }}>
