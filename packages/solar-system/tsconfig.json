@@ -11,5 +11,10 @@
     "node_modules",
     "dist",
     "build"
-  ]
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
 }

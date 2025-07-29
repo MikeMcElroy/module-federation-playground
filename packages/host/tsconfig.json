@@ -2,20 +2,19 @@
   "extends": "../../tsconfig.json",
   "compilerOptions": {
     "outDir": "dist",
-    "baseUrl": ".",
-    "paths": {
-      "world/*": ["../../packages/world/src/*"],
-      "solarSystem/*": ["../../packages/solar-system/src/*"],
-      "universe/*": ["../../packages/universe/src/*"]
-    }
+    "baseUrl": "."
   },
   "include": [
-    "src/**/*",
-    "types/**/*"
+    "src/**/*"
   ],
   "exclude": [
     "node_modules",
     "dist",
     "build"
-  ]
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
 }
