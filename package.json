@@ -18,7 +18,12 @@
     "build:host": "cd packages/host && npm run build",
     "build:world": "cd packages/world && npm run build",
     "build:solar": "cd packages/solar-system && npm run build",
-    "build:universe": "cd packages/universe && npm run build"
+    "build:universe": "cd packages/universe && npm run build",
+    "type-check": "npm run type-check:host && npm run type-check:world && npm run type-check:solar && npm run type-check:universe",
+    "type-check:host": "cd packages/host && npm run type-check",
+    "type-check:world": "cd packages/world && npm run type-check",
+    "type-check:solar": "cd packages/solar-system && npm run type-check",
+    "type-check:universe": "cd packages/universe && npm run type-check"
   },
   "devDependencies": {
     "concurrently": "^7.6.0",
