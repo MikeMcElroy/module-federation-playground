@@ -1,0 +1,29 @@
+{
+  "name": "microfrontend-demo",
+  "version": "1.0.0",
+  "description": "Microfrontend architecture demo using webpack module federation",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "start": "concurrently \"npm run start:host\" \"npm run start:world\" \"npm run start:solar\" \"npm run start:universe\"",
+    "start:host": "cd packages/host && npm start",
+    "start:world": "cd packages/world && npm start",
+    "start:solar": "cd packages/solar-system && npm start",
+    "start:universe": "cd packages/universe && npm start",
+    "install:all": "npm install && npm run install:packages",
+    "install:packages": "cd packages/host && npm install && cd ../world && npm install && cd ../solar-system && npm install && cd ../universe && npm install",
+    "build": "npm run build:world && npm run build:solar && npm run build:universe && npm run build:host",
+    "build:host": "cd packages/host && npm run build",
+    "build:world": "cd packages/world && npm run build",
+    "build:solar": "cd packages/solar-system && npm run build",
+    "build:universe": "cd packages/universe && npm run build"
+  },
+  "devDependencies": {
+    "concurrently": "^7.6.0"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}
