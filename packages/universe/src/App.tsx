@@ -1,6 +1,6 @@
 import React from "react";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div style={{
       display: 'flex',
@@ -84,6 +84,6 @@ function App() {
       </div>
     </div>
   );
-}
+};
 
 export default App;

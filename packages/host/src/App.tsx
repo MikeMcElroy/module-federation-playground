@@ -6,7 +6,7 @@ const WorldApp = React.lazy(() => import("world/App"));
 const SolarSystemApp = React.lazy(() => import("solarSystem/App"));
 const UniverseApp = React.lazy(() => import("universe/App"));
 
-const LoadingSpinner = () => (
+const LoadingSpinner: React.FC = () => (
   <div style={{
     display: 'flex',
     justifyContent: 'center',
@@ -19,7 +19,7 @@ const LoadingSpinner = () => (
   </div>
 );
 
-const NavigationBar = () => (
+const NavigationBar: React.FC = () => (
   <nav style={{
     background: 'rgba(255, 255, 255, 0.1)',
     padding: '1rem',
@@ -82,7 +82,7 @@ const NavigationBar = () => (
   </nav>
 );
 
-const Home = () => (
+const Home: React.FC = () => (
   <div style={{
     textAlign: 'center',
     color: 'white',
@@ -103,7 +103,7 @@ const Home = () => (
   </div>
 );
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
       <div style={{ minHeight: '100vh' }}>
@@ -132,6 +132,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;

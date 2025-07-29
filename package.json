@@ -21,7 +21,9 @@
     "build:universe": "cd packages/universe && npm run build"
   },
   "devDependencies": {
-    "concurrently": "^7.6.0"
+    "concurrently": "^7.6.0",
+    "typescript": "^4.9.4",
+    "@types/node": "^18.11.18"
   },
   "engines": {
     "node": ">=16.0.0"
